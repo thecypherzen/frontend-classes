@@ -1,0 +1,8 @@
+init a repo
+run configuration
+git remote add origin "https://<token>@<repo_link>"
+
+git commit -m ""
+
+git push -u origin master
+README.md

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My First HTML Document</title>
+    <link rel="stylesheet" href="styles/main.css" />
+		<script>
+			let worker = null;
+			let started = false;
+			const startCounter = () => {
+				if (typeof(Worker) !== "undefined") {
+					if (worker === null) {
+						worker = new Worker("static/counter-worker.js");
+						started = true;
+					}
+					worker.onmessage = (e) => {
+						document.getElementById("counter-value").innerText = e.data;
+					}
+				}
+				else {
+					alert("Web Workers are not supported in your browser.");
+				}
+			}
+			const stopCounter = () => {
+				if (worker) {
+					worker.terminate();
+					worker = null;
+				}
+			}
+		</script>
+ </head>
+  <body>
+		<h1>Web Worker</h1>
+		<div>
+			<h4>Counter: <span id="counter-value">0</span></h2>
+		</div>
+		<div class="flex">
+			<button onclick="startCounter()" class="cursor-pointer">Start Counter</button>
+			<button onclick="stopCounter()" class="cursor-pointer">Stop Counter</button>
+		</div>
+	</body>
+</html>

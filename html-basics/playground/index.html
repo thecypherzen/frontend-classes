@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My First HTML Document</title>
+    <link rel="stylesheet" href="styles/main.css" />
+
+    <script>
+      const getLocation = () => {
+        console.log("Getting location...");
+        const locationDiv = document.getElementById("location");
+        console.log(locationDiv);
+        if (locationDiv) {
+          if ("geolocation" in navigator) {
+            navigator.geolocation.getCurrentPosition(
+              (pos) => {
+                const { latitude, longitude } = pos.coords;
+                locationDiv.innerHTML = `Latitude: ${latitude} <br> Longitude: ${longitude}`;
+              },
+              (error) => {
+                console.error(error);
+                switch (error.code) {
+                  case error.PERMISSION_DENIED:
+                    locationDiv.innerHTML =
+                      "User denied the request for Geolocation.";
+                    break;
+                  case error.POSITION_UNAVAILABLE:
+                    locationDiv.innerHTML =
+                      "Location information is unavailable.";
+                    break;
+                  case error.TIMEOUT:
+                    locationDiv.innerHTML =
+                      "The request to get user location timed out.";
+                    break;
+                  case error.UNKNOWN_ERROR:
+                    locationDiv.innerHTML = "An unknown error occurred.";
+                    break;
+                }
+              }
+            );
+          } else {
+            console.error("not supported");
+            locationDiv.innerHTML =
+              "Geolocation is not supported by your browser.";
+          }
+        } else {
+          console.error("No element with id 'location' found.");
+        }
+      };
+      document.addEventListener("DOMContentLoaded", getLocation);
+    </script>
+  </head>
+  <body>
+    <!--<svg
+      width="600"
+      height="400"
+      xmlns="http://www.w3.org/2000/svg"
+      style="position: relative"
+    >
+      <!-- Background image -->
+    <!--<image
+      href="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Fronalpstock_big.jpg/600px-Fronalpstock_big.jpg"
+      width="600"
+      height="400"
+    />
+
+    <rect
+      x="0"
+      y="67"
+      width="150"
+      height="100"
+      fill="rgba(255, 0, 10, 0.3)"
+      stroke="purple"
+      stroke-width="3"
+    />
+    <a style="cursor: pointer">
+      <circle
+        cx="400"
+        cy="200"
+        r="60"
+        fill="rgba(0, 0, 255, 0.3)"
+        stroke="blue"
+        stroke-width="3"
+      />
+    </a>-->
+
+    <!-- Example text label -->
+    <!--<text x="60" y="55" fill="white" font-size="18">Region A</text>-->
+    <!--</svg>-->
+    <!--<meter min="0" max="10" value="2" />-->
+    <div id="location">getting location...</div>
+  </body>
+</html>

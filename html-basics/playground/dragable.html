@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My First HTML Document</title>
+    <link rel="stylesheet" href="styles/main.css" />
+		<script>
+			const onDragStart = (ev) => {
+				console.log("drag start", ev.target.id);
+				ev.dataTransfer.setData("text/plain", ev.target.id);
+				const img = document.getElementById(ev.target.id);
+				if (!img) return;
+				img.classList.toggle("dragging", true);
+				console.log("onstart img parent:", img.parentElement.id);
+			}
+			const onDragOver = (ev) => {
+				ev.preventDefault();
+			}
+			const onDragDrop = (ev) => {
+				ev.preventDefault();
+
+				const targetId = ev.dataTransfer.getData("text/plain");
+				const draggedElement = document.getElementById(targetId);
+				ev.target.appendChild(draggedElement);
+				resetStyles(ev);
+				const img = document.getElementById("image");
+				if (!img) return;
+				img.classList.toggle("dragging", false);
+			}
+			const onDragEnter = (ev) => {
+				const el = document.getElementById(ev.target.id);
+				if (!el) return;
+				const list = Array.from(el.classList);
+				const imgParent = document.getElementById("image")?.parentElement.id;
+				if (!!!imgParent) return;
+				if (list.includes("box") && imgParent !== ev.target.id) {
+					console.log("entering...", ev.target.id);
+					el.classList.toggle("box-default", false);
+					el.classList.toggle("box-drag-over", true);
+				}
+			}
+			const resetStyles = (ev) => {
+				const el = document.getElementById(ev.target.id);
+				if (!el) return;
+				const list = Array.from(el.classList);
+				if (list.includes("box")) {
+					el.classList.toggle("box-drag-over", false);
+					el.classList.toggle("box-default", true);
+				}
+			}
+		</script>
+  </head>
+  <body>
+		<div class="flex">
+			<div class="box box-default" id="div-src" ondragenter="onDragEnter(event)" ondragover="onDragOver(event)" ondrop="onDragDrop(event)" ondragleave="resetStyles(event)">
+				<img src="imgs/ben-rosett-WdJkXFQ4VHY-unsplash.jpeg"  height="100px" style="cursor:pointer" draggable="true" ondragstart="onDragStart(event)" id="image" class="rounded-sm"/>
+
+			</div>
+			<div class="box box-default" ondragover="onDragOver(event)" ondrop="onDragDrop(event)" id="div-dest" ondragenter="onDragEnter(event)" ondragleave="resetStyles(event)"></div>
+		</div>
+	</body>
+</html>
