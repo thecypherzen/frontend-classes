@@ -4,6 +4,52 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Basic CSS Styling</title>
+    <style>
+      /* rem em vh/vw % */
+      .em-size-small {
+        font-size: 0.75em; /* 50 * 0.75 = 37.5px */
+      }
+      .em-size-large {
+        font-size: 1.5em; /* 16 * 1.5 = 24px */
+      }
+      .rem-font-size-small {
+        font-size: 0.75rem;
+      }
+      .font-size-large {
+        font-size: 50px;
+      }
+      .font-size-small {
+        font-size: 20px;
+      }
+      .bg-grey {
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+      .bg-blue {
+        background-color: rgb(63, 63, 179);
+      }
+      .bg-yellow {
+        background-color: yellow;
+      }
+      .w-full {
+        width: 100vw;
+      }
+      .h-full {
+        height: 100vh;
+      }
+      section {
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      #footer {
+        margin-top: 20px;
+        padding: 30px;
+        background-color: #2e2e2e;
+        color: #f4f4f4;
+        line-height: 1.3rem;
+        text-align: center;
+      }
+    </style>
   </head>
   <!--
 Project Requirements:
@@ -35,16 +81,18 @@ background properties, and typography settings.
     </header>
 
     <main>
-      <section>
-        <h2>About Typography</h2>
-        <p>
+      <section class="font-size-large bg-grey h-full">
+        <h2 class="em-size-small">About Typography</h2>
+        <p class="rem-font-size-small bg-blue">
           This paragraph will be used to demonstrate various text properties.
         </p>
+        <span class="bg-blue">the &lt;span&gt; is an inline tag</span>
+        <span class="bg-yellow">the &lt;span&gt; is an inline tag</span>
         <p>This is another paragraph with different styling needs.</p>
       </section>
 
-      <section>
-        <h2>Background Examples</h2>
+      <section class="font-size-small bg-blue">
+        <h2 class="em-size-large">Background Examples</h2>
         <div>This is a box for background color</div>
         <div>This box will have a background image</div>
         <div>This demonstrates background positioning</div>
@@ -58,8 +106,15 @@ background properties, and typography settings.
       </section>
     </main>
 
-    <footer>
+    <footer id="footer">
       <p>Footer text for additional styling practice</p>
     </footer>
+
+    <script>
+      const footer = document.getElementById("footer");
+      if (footer) {
+        console.log(footer);
+      }
+    </script>
   </body>
 </html>
