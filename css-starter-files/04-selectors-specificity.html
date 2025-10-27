@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Selectors and Specificity</title>
+  </head>
+  <!--
+Project Requirements:
+1. Selector Practice
+   - Use element selectors
+   - Work with descendant selectors
+   - Practice child selectors
+   - Use attribute selectors
+   - Combine multiple selectors
+
+2. Specificity Understanding
+   - Create competing styles
+   - Practice selector weight
+   - Use !important (sparingly)
+   - Understand selector hierarchy
+
+Goals: Students should style these elements to understand
+how different selectors work and how specificity affects styling.
+-->
+  <body>
+    <header>
+      <h1>CSS Selectors Practice</h1>
+      <p>Understanding selector types and specificity</p>
+    </header>
+
+    <main>
+      <section>
+        <h2>Basic Selectors</h2>
+        <p>This is a paragraph for element selectors</p>
+        <p>This is another paragraph</p>
+        <div>
+          <p>This is a nested paragraph</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Attribute Selectors</h2>
+        <input type="text" placeholder="Text input" />
+        <input type="email" placeholder="Email input" />
+        <input type="number" placeholder="Number input" />
+        <a href="https://example.com">External link</a>
+        <a href="local.html">Local link</a>
+      </section>
+
+      <section>
+        <h2>Combinators</h2>
+        <div>
+          <p>First child paragraph</p>
+          <span>Span element</span>
+          <p>Second child paragraph</p>
+          <p>Third child paragraph</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Specificity Examples</h2>
+        <div>
+          <p>Paragraph for specificity testing</p>
+          <p>Another paragraph for specificity</p>
+          <span>Span for specificity testing</span>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

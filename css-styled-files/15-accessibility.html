@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Accessibility</title>
+  </head>
+  <!--
+Project Requirements:
+1. Semantic Markup
+   - Use proper heading structure
+   - Implement ARIA labels
+   - Create meaningful navigation
+   - Practice landmark regions
+
+2. Visual Accessibility
+   - Ensure sufficient contrast
+   - Provide focus indicators
+   - Handle text scaling
+   - Support high contrast
+
+3. Interactive Elements
+   - Create keyboard navigation
+   - Implement skip links
+   - Handle focus management
+   - Provide feedback
+
+4. Content Adaptation
+   - Support screen readers
+   - Handle reduced motion
+   - Create print styles
+   - Practice content hiding
+
+Goals: Students should style these elements to create
+accessible interfaces that work for all users.
+-->
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header role="banner">
+      <h1>Accessibility in CSS</h1>
+      <nav role="navigation" aria-label="Main navigation">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content" role="main">
+      <section aria-labelledby="visual-heading">
+        <h2 id="visual-heading">Visual Accessibility</h2>
+        <div>
+          <p>High contrast text example</p>
+          <p>Text with sufficient size</p>
+          <a href="#">Focused link example</a>
+        </div>
+      </section>
+
+      <section aria-labelledby="forms-heading">
+        <h2 id="forms-heading">Accessible Forms</h2>
+        <form>
+          <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" aria-required="true" />
+          </div>
+          <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" aria-required="true" />
+            <span role="alert" aria-live="polite"></span>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+
+      <section aria-labelledby="interactive-heading">
+        <h2 id="interactive-heading">Interactive Elements</h2>
+        <div role="tablist">
+          <button role="tab" aria-selected="true">Tab 1</button>
+          <button role="tab" aria-selected="false">Tab 2</button>
+          <button role="tab" aria-selected="false">Tab 3</button>
+        </div>
+        <div role="tabpanel">Tab content</div>
+      </section>
+
+      <section aria-labelledby="motion-heading">
+        <h2 id="motion-heading">Reduced Motion</h2>
+        <div>
+          <div>Animated element</div>
+          <div>Motion-sensitive content</div>
+        </div>
+      </section>
+
+      <section aria-labelledby="content-heading">
+        <h2 id="content-heading">Hidden Content</h2>
+        <div>
+          <p>Visually hidden text for screen readers</p>
+          <button aria-expanded="false">Toggle Content</button>
+          <div>Expandable content</div>
+        </div>
+      </section>
+
+      <section aria-labelledby="print-heading">
+        <h2 id="print-heading">Print Styles</h2>
+        <div>
+          <article>
+            <h3>Printable Content</h3>
+            <p>Content formatted for printing</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer role="contentinfo">
+      <p>Accessible footer content</p>
+    </footer>
+  </body>
+</html>

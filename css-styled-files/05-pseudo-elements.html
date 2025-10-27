@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pseudo Elements and Classes</title>
+  </head>
+  <!--
+Project Requirements:
+1. Pseudo-classes
+   - Style link states (:hover, :active, :visited)
+   - Use structural pseudo-classes (:first-child, :last-child)
+   - Practice form states (:focus, :checked)
+   - Work with :nth-child selectors
+
+2. Pseudo-elements
+   - Create custom content with ::before and ::after
+   - Style first line with ::first-line
+   - Style first letter with ::first-letter
+   - Practice selection styling with ::selection
+
+Goals: Students should style these elements to understand
+how pseudo-classes and pseudo-elements can enhance user interaction
+and add decorative elements.
+-->
+  <body>
+    <header>
+      <h1>Pseudo Elements and Classes</h1>
+      <p>Exploring dynamic and generated content</p>
+    </header>
+
+    <main>
+      <section>
+        <h2>Link States</h2>
+        <nav>
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+          <a href="https://example.com">External Link</a>
+        </nav>
+      </section>
+
+      <section>
+        <h2>Structural Pseudo-classes</h2>
+        <div>
+          <p>First paragraph</p>
+          <p>Second paragraph</p>
+          <p>Third paragraph</p>
+          <p>Fourth paragraph</p>
+          <p>Fifth paragraph</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Form States</h2>
+        <form>
+          <input type="text" placeholder="Focus me" />
+          <input type="checkbox" /> Check me
+          <select>
+            <option>Option 1</option>
+            <option>Option 2</option>
+          </select>
+        </form>
+      </section>
+
+      <section>
+        <h2>Pseudo-elements</h2>
+        <p>
+          This paragraph will have custom first letter and first line styling.
+        </p>
+        <div>This element will have content before and after it.</div>
+        <blockquote>
+          This is a quote that will have quotation marks added.
+        </blockquote>
+      </section>
+
+      <section>
+        <h2>Selection Example</h2>
+        <p>Try selecting this text to see custom selection styling.</p>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Design</title>
+  </head>
+  <!--
+Project Requirements:
+1. Media Queries
+   - Create breakpoints
+   - Practice mobile-first
+   - Handle different screen sizes
+   - Adapt layouts
+
+2. Responsive Images
+   - Create fluid images
+   - Practice picture element
+   - Use srcset attribute
+   - Handle different ratios
+
+3. Responsive Typography
+   - Use relative units
+   - Create fluid text
+   - Scale headings
+   - Adjust line heights
+
+4. Responsive Components
+   - Create responsive navigation
+   - Handle responsive tables
+   - Adapt forms
+   - Scale cards
+
+Goals: Students should style these elements to create
+fully responsive layouts that work across different devices.
+-->
+  <body>
+    <header>
+      <h1>Responsive Design Practice</h1>
+      <nav>
+        <button>Menu</button>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2>Responsive Images</h2>
+        <picture>
+          <source
+            media="(min-width: 800px)"
+            srcset="https://picsum.photos/800/400?random=1"
+          />
+          <source
+            media="(min-width: 400px)"
+            srcset="https://picsum.photos/400/200?random=1"
+          />
+          <img
+            src="https://picsum.photos/200/100?random=1"
+            alt="Responsive image"
+          />
+        </picture>
+      </section>
+
+      <section>
+        <h2>Responsive Typography</h2>
+        <h1>Large Heading</h1>
+        <h2>Medium Heading</h2>
+        <h3>Small Heading</h3>
+        <p>Body text that needs to be readable at all sizes</p>
+      </section>
+
+      <section>
+        <h2>Responsive Grid</h2>
+        <div>
+          <div>Grid Item 1</div>
+          <div>Grid Item 2</div>
+          <div>Grid Item 3</div>
+          <div>Grid Item 4</div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Responsive Table</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Header 1</th>
+              <th>Header 2</th>
+              <th>Header 3</th>
+              <th>Header 4</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Data 1</td>
+              <td>Data 2</td>
+              <td>Data 3</td>
+              <td>Data 4</td>
+            </tr>
+            <tr>
+              <td>Data 5</td>
+              <td>Data 6</td>
+              <td>Data 7</td>
+              <td>Data 8</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Responsive Form</h2>
+        <form>
+          <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" />
+          </div>
+          <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" />
+          </div>
+          <div>
+            <label for="message">Message:</label>
+            <textarea id="message"></textarea>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+
+      <section>
+        <h2>Responsive Cards</h2>
+        <div>
+          <article>
+            <img
+              src="https://picsum.photos/300/200?random=2"
+              alt="Card image 1"
+            />
+            <h3>Card Title 1</h3>
+            <p>Card content that needs to adapt to different screen sizes.</p>
+          </article>
+          <article>
+            <img
+              src="https://picsum.photos/300/200?random=3"
+              alt="Card image 2"
+            />
+            <h3>Card Title 2</h3>
+            <p>More card content that needs to be responsive.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>Footer content that adapts to screen size</div>
+    </footer>
+  </body>
+</html>
