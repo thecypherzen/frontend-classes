@@ -4,6 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CSS Layout Basics</title>
+    <style>
+      main {
+        border: 1px solid #333;
+        padding: 0px;
+      }
+      section {
+        background: #898989;
+        padding: 20px;
+      }
+      section:not(:last-child) {
+        margin-bottom: 20px;
+      }
+
+      .float {
+        float: right;
+        border: 1px solid #333;
+      }
+      .float + * {
+        clear: both;
+      }
+    </style>
   </head>
   <!--
 Project Requirements:
@@ -58,7 +79,7 @@ fundamental layout concepts and how elements interact with each other.
         </div>
       </section>
 
-      <section>
+      <section class="float">
         <h2>Float Layout</h2>
         <div>
           <div>Floated element 1</div>

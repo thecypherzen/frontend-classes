@@ -4,6 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CSS Selectors and Specificity</title>
+    <style>
+      input {
+        background: #d5d5d5;
+        padding: 5px;
+        outline: none;
+        border: none;
+      }
+      input[type="text"] {
+        border-radius: 5px;
+      }
+      input[placeholder="Number input"] {
+        border: 1px solid #333;
+      }
+      .section-2 {
+        font-size: 1.5rem;
+        background: #aeaeae;
+      }
+      a[href="local.html"] {
+        font-size: 10px;
+      }
+      .section-3 div {
+        background: red;
+      }
+
+      .section-3 > div {
+        background: blue;
+      }
+      .section-3 ~ section {
+        background: yellow;
+      }
+      .section-3 div {
+        background: blueviolet;
+      }
+    </style>
   </head>
   <!--
 Project Requirements:
@@ -12,7 +46,7 @@ Project Requirements:
    - Work with descendant selectors
    - Practice child selectors
    - Use attribute selectors
-   - Combine multiple selectors
+   - Combine multiple selectors using combinators like >, +, ~ and space
 
 2. Specificity Understanding
    - Create competing styles
@@ -30,7 +64,7 @@ how different selectors work and how specificity affects styling.
     </header>
 
     <main>
-      <section>
+      <section class="section-1">
         <h2>Basic Selectors</h2>
         <p>This is a paragraph for element selectors</p>
         <p>This is another paragraph</p>
@@ -39,7 +73,7 @@ how different selectors work and how specificity affects styling.
         </div>
       </section>
 
-      <section>
+      <section class="section-2">
         <h2>Attribute Selectors</h2>
         <input type="text" placeholder="Text input" />
         <input type="email" placeholder="Email input" />
@@ -48,7 +82,7 @@ how different selectors work and how specificity affects styling.
         <a href="local.html">Local link</a>
       </section>
 
-      <section>
+      <section class="section-3">
         <h2>Combinators</h2>
         <div>
           <p>First child paragraph</p>
@@ -56,9 +90,15 @@ how different selectors work and how specificity affects styling.
           <p>Second child paragraph</p>
           <p>Third child paragraph</p>
         </div>
+        <div>
+          <div>First child paragraph</div>
+          <span>Span element</span>
+          <p>Second child paragraph</p>
+          <div>Third child paragraph</div>
+        </div>
       </section>
-
-      <section>
+      <div></div>
+      <section class="section-4">
         <h2>Specificity Examples</h2>
         <div>
           <p>Paragraph for specificity testing</p>

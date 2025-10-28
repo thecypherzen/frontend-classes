@@ -4,6 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CSS Box Model</title>
+
+    <style>
+      * {
+        margin: 0px;
+      }
+      body {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+
+      .section-1 .box-1 {
+        margin: 20px;
+        background-color: lightblue;
+      }
+
+      .section-2 .box-2 {
+        padding-left: 10px;
+        padding-right: 20px;
+        background-color: aquamarine;
+      }
+
+      .section-3 .box-3 {
+        /*border: 5px dotted violet;*/
+        border: 5px ridge violet;
+      }
+      .section-4 .box-2 {
+        max-width: 500px;
+        min-width: 100px;
+        border: 10px groove greenyellow;
+      }
+    </style>
   </head>
   <!--
 Project Requirements:
@@ -30,32 +62,41 @@ how the box model affects layout and spacing.
     </header>
 
     <main>
-      <section>
+      <section class="section-1">
         <h2>Margin Practice</h2>
-        <div>Box 1 - Margin all sides</div>
-        <div>Box 2 - Margin top/bottom</div>
-        <div>Box 3 - Margin left/right</div>
+        <div class="box-1">Box 1 - Margin all sides</div>
+        <div class="box-2">Box 2 - Margin top/bottom</div>
+        <div class="box-3">Box 3 - Margin left/right</div>
       </section>
 
-      <section>
+      <section class="section-2">
         <h2>Padding Practice</h2>
-        <div>Box with padding all around</div>
-        <div>Box with specific padding sides</div>
-        <div>Box with mixed padding values</div>
+        <div class="box-1">Box with padding all around</div>
+        <div class="box-2">
+          Box with specific padding sides. Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Assumenda id, magnam quia nisi dicta
+          velit aliquid ipsam tenetur error nostrum iure excepturi fugiat sint
+          voluptatibus iste rerum ab, ad neque.
+        </div>
+        <div class="box-3">Box with mixed padding values</div>
       </section>
 
-      <section>
+      <section class="section-3">
         <h2>Border Practice</h2>
-        <div>Box with border all around</div>
-        <div>Box with specific border sides</div>
-        <div>Box with different border styles</div>
+        <div class="box-1">Box with border all around</div>
+        <div class="box-2">Box with specific border sides</div>
+        <div class="box-3">Box with different border styles</div>
       </section>
 
-      <section>
+      <section class="section-4">
         <h2>Dimension Practice</h2>
-        <div>Fixed width box</div>
-        <div>Max-width box</div>
-        <div>Height controlled box</div>
+        <div class="box-1">Fixed width box</div>
+        <div class="box-2">
+          Max-width box. Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. Quidem harum ea repellendus voluptates eveniet earum consectetur
+          in aspernatur repellat obcaecati.
+        </div>
+        <div class="box-3">Height controlled box</div>
       </section>
     </main>
   </body>

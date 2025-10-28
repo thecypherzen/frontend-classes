@@ -4,6 +4,52 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lists and Tables</title>
+    <style>
+      .section-1 ul {
+        background-color: blueviolet;
+        padding: 10px;
+        border-radius: 10px;
+        list-style-type: square;
+        list-style-position: inside;
+        ul {
+          list-style-type: circle;
+          list-style-position: outside;
+          /*list-style-image: url("img/pointing-right-finger.svg");*/
+        }
+      }
+
+      .section-1 ol {
+        background-color: yellowgreen;
+        padding: 8px;
+        border-radius: 5px;
+        list-style-type: square;
+      }
+
+      table {
+        /*background: url("/img/image-1.jpeg") no-repeat center center/cover;*/
+        /*padding: 10px;
+        border-radius: 5px;*/
+        width: 100%;
+        border-collapse: collapse;
+        /*height: 100vh;*/
+      }
+
+      thead {
+        background: blueviolet;
+        padding: 20px;
+        text-align: left;
+      }
+      th,
+      table,
+      td,
+      tr {
+        border: 1px solid #333;
+      }
+      .table-wrapper {
+        overflow: scroll;
+        max-height: 200px;
+      }
+    </style>
   </head>
   <!--
 Project Requirements:
@@ -30,7 +76,7 @@ visually appealing and well-organized lists and tables.
     </header>
 
     <main>
-      <section>
+      <section class="section-1">
         <h2>List Examples</h2>
 
         <h3>Unordered List</h3>
@@ -60,34 +106,132 @@ visually appealing and well-organized lists and tables.
         </ol>
       </section>
 
-      <section>
+      <section class="section-2">
         <h2>Table Example</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Header 1</th>
-              <th>Header 2</th>
-              <th>Header 3</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Row 1, Cell 1</td>
-              <td>Row 1, Cell 2</td>
-              <td>Row 1, Cell 3</td>
-            </tr>
-            <tr>
-              <td>Row 2, Cell 1</td>
-              <td>Row 2, Cell 2</td>
-              <td>Row 2, Cell 3</td>
-            </tr>
-            <tr>
-              <td>Row 3, Cell 1</td>
-              <td>Row 3, Cell 2</td>
-              <td>Row 3, Cell 3</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Header 1</th>
+                <th>Header 2</th>
+                <th>Header 3</th>
+                <th>Header 4</th>
+                <th>Header 5</th>
+                <th>Header 6</th>
+                <th>Header 7</th>
+                <th>Header 8</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  Row 1, Cell 1. Lorem ipsum dolor sit amet consectetur
+                  adipisicing elit. Libero, consequatur!
+                </td>
+                <td>
+                  Row 1, Cell 2 Lorem ipsum dolor sit amet consectetur
+                  adipisicing elit. Illo non voluptas voluptate.
+                </td>
+                <td>
+                  Row 1, Cell 3 Lorem ipsum, dolor sit amet consectetur
+                  adipisicing elit. Nemo, fugit.
+                </td>
+                <td>
+                  Row 1, Cell 3 Lorem ipsum, dolor sit amet consectetur
+                  adipisicing elit. Nemo, fugit.
+                </td>
+                <td>
+                  Row 1, Cell 3 Lorem ipsum, dolor sit amet consectetur
+                  adipisicing elit. Nemo, fugit.
+                </td>
+                <td>
+                  Row 1, Cell 3 Lorem ipsum, dolor sit amet consectetur
+                  adipisicing elit. Nemo, fugit.
+                </td>
+                <td>
+                  Row 1, Cell 3 Lorem ipsum, dolor sit amet consectetur
+                  adipisicing elit. Nemo, fugit.
+                </td>
+                <td>
+                  Row 1, Cell 3 Lorem ipsum, dolor sit amet consectetur
+                  adipisicing elit. Nemo, fugit.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Row 2, Cell 1 Lorem ipsum dolor sit amet consectetur,
+                  adipisicing elit. Omnis quae illo beatae possimus blanditiis
+                  unde laboriosam itaque doloribus quasi ea.
+                </td>
+                <td>
+                  Row 2, Cell 2 Lorem ipsum dolor sit amet consectetur
+                  adipisicing elit. Beatae, perspiciatis!
+                </td>
+                <td>
+                  Row 2, Cell 3 Lorem, ipsum dolor sit amet consectetur
+                  adipisicing elit. Odio, corrupti?
+                </td>
+                <td>
+                  Row 2, Cell 3 Lorem, ipsum dolor sit amet consectetur
+                  adipisicing elit. Odio, corrupti?
+                </td>
+                <td>
+                  Row 2, Cell 3 Lorem, ipsum dolor sit amet consectetur
+                  adipisicing elit. Odio, corrupti?
+                </td>
+                <td>
+                  Row 2, Cell 3 Lorem, ipsum dolor sit amet consectetur
+                  adipisicing elit. Odio, corrupti?
+                </td>
+                <td>
+                  Row 2, Cell 3 Lorem, ipsum dolor sit amet consectetur
+                  adipisicing elit. Odio, corrupti?
+                </td>
+                <td>
+                  Row 2, Cell 3 Lorem, ipsum dolor sit amet consectetur
+                  adipisicing elit. Odio, corrupti?
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Row 3, Cell 1 Lorem ipsum dolor, sit amet consectetur
+                  adipisicing elit. Deleniti perspiciatis, nostrum magnam
+                  pariatur eaque optio cum voluptatibus repudiandae quaerat
+                  delectus.
+                </td>
+                <td>
+                  Row 3, Cell 2 Lorem ipsum dolor sit amet consectetur
+                  adipisicing elit. Harum aliquam aliquid quos expedita
+                  quibusdam odit officiis vero! Quaerat, eius alias?
+                </td>
+                <td>
+                  Row 3, Cell 3 Lorem ipsum dolor sit, amet consectetur
+                  adipisicing elit. Illo, suscipit?
+                </td>
+                <td>
+                  Row 3, Cell 3 Lorem ipsum dolor sit, amet consectetur
+                  adipisicing elit. Illo, suscipit?
+                </td>
+                <td>
+                  Row 3, Cell 3 Lorem ipsum dolor sit, amet consectetur
+                  adipisicing elit. Illo, suscipit?
+                </td>
+                <td>
+                  Row 3, Cell 3 Lorem ipsum dolor sit, amet consectetur
+                  adipisicing elit. Illo, suscipit?
+                </td>
+                <td>
+                  Row 3, Cell 3 Lorem ipsum dolor sit, amet consectetur
+                  adipisicing elit. Illo, suscipit?
+                </td>
+                <td>
+                  Row 3, Cell 3 Lorem ipsum dolor sit, amet consectetur
+                  adipisicing elit. Illo, suscipit?
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
     </main>
   </body>

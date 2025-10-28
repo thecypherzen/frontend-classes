@@ -4,6 +4,50 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pseudo Elements and Classes</title>
+    <style>
+      a {
+        padding: 5px;
+      }
+      a:link {
+        color: red;
+      }
+      a:visited {
+        color: chocolate;
+      }
+      a:hover {
+        background: blue;
+        color: white;
+      }
+      a:active {
+        background: purple;
+        color: yellow;
+      }
+
+      p:first-child {
+        background: red;
+      }
+      p:last-child {
+        background: blue;
+      }
+      section:nth-child(odd) {
+        background: #aeaeae;
+      }
+      section:nth-child(3) {
+        border: black 1px solid;
+      }
+      p:nth-child(2n + 3) {
+        border: green 2px solid;
+      }
+      p::selection {
+        background: blue;
+      }
+      p::first-letter {
+        font-size: 2.5rem;
+        color: rgb(61, 61, 234);
+        font-weight: bold;
+        font-family: "Arial", sans-serif;
+      }
+    </style>
   </head>
   <!--
 Project Requirements:
@@ -40,13 +84,18 @@ and add decorative elements.
         </nav>
       </section>
 
-      <section>
+      <section class="section-2">
         <h2>Structural Pseudo-classes</h2>
         <div>
           <p>First paragraph</p>
           <p>Second paragraph</p>
           <p>Third paragraph</p>
           <p>Fourth paragraph</p>
+          <p>Fifth paragraph</p>
+          <p>Fifth paragraph</p>
+          <p>Fifth paragraph</p>
+          <p>Fifth paragraph</p>
+          <p>Fifth paragraph</p>
           <p>Fifth paragraph</p>
         </div>
       </section>
