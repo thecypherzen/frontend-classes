@@ -4,35 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Portfolio | Contact</title>
-    <style>
-      :root {
-        font-family: Arial, Helvetica, sans-serif;
-      }
-    </style>
+    <link rel="stylesheet" href="../styles/global.css" />
   </head>
   <body>
     <!-- Top Section-->
-    <header id="header">
-      <section id="left-section">
-        <div id="logo">
-          <a href="../index.html">
-            <div id="logo-icon"></div>
-            <h4>William</h4>
-          </a>
-        </div>
+    <header id="header" class="p-md flex items-center min-h-80">
+      <div class="content-wrapper flex justify-between items-center">
+        <section id="left-section" class="flex items-center gap-10">
+          <div id="logo">
+            <a href="../index.html" class="flex items-center gap-10">
+              <div id="logo-icon"></div>
+              <h4>William Inyam</h4>
+            </a>
+          </div>
 
-        <div id="title">
-          <h6>Full Stack Dev</h6>
-        </div>
-      </section>
+          <div id="title">
+            <h6>Full Stack Dev</h6>
+          </div>
+        </section>
 
-      <nav id="navigation-menu">
-        <menu>
-          <li><a href="../resume.html">Resume</a></li>
-          <li><a href="../src/projects.html">Projects</a></li>
-          <li><a href="../src/contact.html">Contact</a></li>
-        </menu>
-      </nav>
+        <nav id="navigation-menu">
+          <menu class="flex items-center">
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </menu>
+        </nav>
+      </div>
     </header>
 
     <!-- Middle Section -->
@@ -86,29 +84,35 @@
     </div>
 
     <!-- Bottom Section -->
-    <footer id="footer">
-      <p><span>Phone</span> <span>+234123456789</span></p>
-      <p><span>Email</span> <span>myemail@myhost.tld</span></p>
-      <p>
-        <span>Follow Me</span>
-        <span>
-          <span id="linkedin">
-            <img
-              src="/img/linkedin-logo.webp"
-              alt="ln"
-              style="width: 20px; height: auto"
-            />
+    <footer id="footer" class="h-200">
+      <div class="content-wrapper flex justify-between items-center flex">
+        <p class="flex flex-col gap-5">
+          <span class="bold">Phone</span> <span>+234123456789</span>
+        </p>
+        <p class="flex flex-col gap-5">
+          <span class="bold">Email</span> <span>myemail@myhost.tld</span>
+        </p>
+        <p class="flex flex-col gap-5">
+          <span class="bold">Follow Me</span>
+          <span class="flex gap-20">
+            <span id="linkedin">
+              <img
+                src="../img/linkedin-logo.png"
+                alt="ln"
+                class="icon grayscale"
+              />
+            </span>
+            <span id="twitter">
+              <img
+                src="../img/twitter-logo.png"
+                alt="x"
+                class="icon brightness-0"
+              />
+            </span>
           </span>
-          <span id="twitter">
-            <img
-              src="/img/twitter-logo.png"
-              alt="x"
-              style="width: 20px; height: auto"
-            />
-          </span>
-        </span>
-      </p>
-      <p>&copy; 2035 | By William Inyam</p>
+        </p>
+        <p>&copy; 2035 | By William Inyam</p>
+      </div>
     </footer>
   </body>
 </html>
