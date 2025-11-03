@@ -13,12 +13,19 @@
   --color-grey-dark: #333;
   --color-grey: #b8b7b7;
   --color-grey-light: #f3f3f3;
+  /*--color-grey-light-transparent: rgba(243, 243, 243);*/
   --color-yellow: #eea302;
+  --color-red: #ff3b25;
+  --color-green: #80d8da;
   --fs-sm: 0.75rem;
+  --fs-lg: 6.25rem;
   --padding-xs: 2px;
   --padding-sm: 4.5px;
   --padding-md: 10px;
   --padding-lg: 24px;
+  --padding-xl: 48px;
+  --padding-2xl: 90px;
+  --padding-3xl: 120px;
 }
 
 body {
@@ -73,6 +80,28 @@ li {
   padding: var(--padding-lg);
 }
 
+.py-xs {
+  padding-block: var(--padding-xs);
+}
+.py-sm {
+  padding-block: var(--padding-sm);
+}
+.py-md {
+  padding-block: var(--padding-md);
+}
+.py-lg {
+  padding-block: var(--padding-lg);
+}
+.py-xl {
+  padding-block: var(--padding-xl);
+}
+.py-2xl {
+  padding-block: var(--padding-2xl);
+}
+.py-3xl {
+  padding-block: var(--padding-3xl);
+}
+
 /* Display styles */
 .flex {
   display: flex;
@@ -93,8 +122,16 @@ li {
   justify-content: space-between;
 }
 
+.justify-center {
+  justify-content: center;
+}
+
 .justify-start {
   justify-content: start !important;
+}
+
+.bg-grey-light {
+  background-color: var(--color-grey-light);
 }
 
 .items-center {
@@ -121,7 +158,16 @@ li {
 .bg-yellow {
   background: var(--color-yellow);
 }
+.backdrop-blur {
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(8px);
+}
 
+.grey-light-backdrop-opacity-50 {
+  background-color: rgba(243, 243, 243, 0.65);
+}
+
+/* Spacing Utilities */
 .gap-5 {
   gap: 5px;
 }
@@ -144,6 +190,9 @@ li {
   font-size: var(--fs-sm);
 }
 
+.text-lg {
+  font-size: var(--fs-lg);
+}
 /* others */
 .icon {
   width: 20px;
@@ -169,6 +218,16 @@ li {
 
 .grayscale {
   filter: grayscale(100%);
+}
+
+/* Position Utilities */
+.sticky {
+  position: sticky;
+}
+
+.top-0 {
+  top: 0px;
+  z-index: 100;
 }
 
 /* Specific Element Styles */
