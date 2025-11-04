@@ -18,7 +18,9 @@
   --color-red: #ff3b25;
   --color-green: #80d8da;
   --fs-sm: 0.75rem;
+  --fs-md: 1.425rem;
   --fs-lg: 6.25rem;
+  --fs-heading: 2.625rem;
   --padding-xs: 2px;
   --padding-sm: 4.5px;
   --padding-md: 10px;
@@ -190,8 +192,15 @@ li {
   font-size: var(--fs-sm);
 }
 
+.text-md {
+  font-size: var(--fs-md);
+}
+
 .text-lg {
   font-size: var(--fs-lg);
+}
+.text-heading {
+  font-size: var(--fs-heading);
 }
 /* others */
 .icon {

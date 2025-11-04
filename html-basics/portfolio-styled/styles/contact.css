@@ -1,8 +1,6 @@
 #contact-main {
-  border: 2px solid var(--color-red);
   .content-wrapper {
     max-width: 800px;
-    border: 1px solid var(--color-yellow);
   }
 }
 
@@ -18,20 +16,17 @@
 }
 
 #form-wrapper {
-  border: 1px solid red;
   width: 55%;
   padding: 10px;
 }
 
 #contact-form {
-  border: 1px solid blue;
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   gap: 30px;
   .form-control {
-    border: 1px solid green;
     display: flex;
     justify-content: space-between;
     gap: 10px;
@@ -39,14 +34,48 @@
   .form-group {
     display: flex;
     flex-direction: column;
-    border: 1px solid teal;
     gap: 10px;
     width: 48%;
-    input {
-      border: 1px solid var(--color-grey-dark);
-      padding-inline: 5px;
-      padding-block: 12px;
-      outline: none;
+    textarea {
+      min-height: 7.625rem;
+      width: 100%;
+      resize: none;
     }
   }
+}
+
+.full-width {
+  min-width: 100%;
+}
+
+input,
+textarea,
+button {
+  border: 1px solid var(--color-grey-dark);
+  padding-inline: 10px;
+  padding-block: 12px;
+  outline: none;
+}
+
+button {
+  border-radius: 100px;
+  outline: none;
+  transition: background-color 0.25s ease-in;
+  padding-inline: 1rem;
+  padding-block: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: transparent;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  background-color: var(--color-grey);
+  border-color: var(--color-grey-dark);
+  transition: none;
+  color: var(--color-grey-dark);
+  opacity: 0.8;
 }

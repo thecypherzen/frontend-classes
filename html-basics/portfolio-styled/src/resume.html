@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Portfolio | Resume</title>
     <link rel="stylesheet" href="../styles/global.css" />
+    <link rel="stylesheet" href="../styles/resume.css" />
   </head>
   <body>
     <!-- Top Section-->
@@ -33,127 +34,113 @@
       </div>
     </header>
 
-    <!-- Middle Section -->
+    <!-- Main Section -->
     <main id="main">
-      <h1>Resume</h1>
-      <table>
-        <!-- header -->
-        <thead>
-          <tr>
-            <td>Title</td>
-            <td>Year</td>
-            <td>Details</td>
-          </tr>
-        </thead>
-        <!-- table body -->
-        <tbody>
-          <!-- Work Experience - Row 1 -->
-          <tr>
-            <td>Work Experience</td>
-            <td>2035 - Present</td>
-            <td>
-              <div>
-                <h4>Editor</h4>
+      <div class="content-wrapper flex flex-col py-3xl">
+        <h1 class="text-heading">Resume</h1>
+        <!-- Work Experience -->
+        <section class="resume-item">
+          <h2>Work<br />Experience</h2>
+          <!-- Work Experience Item - 1 -->
+          <div class="resume-details">
+            <section class="resume-details-group">
+              <p class="year-column">2035 - Present</p>
+              <div class="description-column">
+                <h3>Editor</h3>
                 <p>
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                   Delectus tenetur officiis repellat quod explicabo natus
                   reprehenderit voluptates veniam nam quis.
                 </p>
               </div>
-            </td>
-          </tr>
-          <!-- Work Experience Row 2 -->
-          <tr>
-            <td></td>
-            <td>2035 - 2035</td>
-            <td>
-              <div>
-                <h4>Writer at Large</h4>
+            </section>
+            <!-- Work Experience Item - 2 -->
+            <section class="resume-details-group">
+              <p class="year-column">2035 - 2035</p>
+              <div class="description-column">
+                <h3>Writer at Large</h3>
                 <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Provident ab quia vel laboriosam officia!
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Officiis, ea! Officiis, tempore atque inventore cum impedit
+                  expedita dignissimos saepe neque modi quidem sed at quos
+                  nesciunt est fuga corporis commodi!
                 </p>
               </div>
-            </td>
-          </tr>
-          <!-- Work Experience Row 3 -->
-          <tr>
-            <td></td>
-            <td>2035 - 2035</td>
-            <td>
-              <div>
-                <h4>Intern</h4>
+            </section>
+            <!-- Work Experience Item - 3 -->
+            <section class="resume-details-group">
+              <p class="year-column">2035 - 2035</p>
+              <div class="description-column">
+                <h3>Intern</h3>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                  reiciendis provident quisquam optio, facere impedit itaque
-                  ducimus quasi? Eius dolore consequatur quae perferendis dolor
-                  earum.
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Incidunt quis quo corporis quaerat odio magni, ipsa aliquam
+                  voluptatibus officia dolores?
                 </p>
               </div>
-            </td>
-          </tr>
-          <!-- Education Row 1 -->
-          <tr>
-            <td>Education</td>
-            <td>2035 - 2035</td>
-            <td>
-              <div>
-                <h4>Establishment Name | Master’s Degree</h4>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Facere dolores, necessitatibus eos labore maxime veniam?
-                </p>
-              </div>
-            </td>
-          </tr>
-          <!-- Education Row 2 -->
-          <tr>
-            <td></td>
-            <td>2035 - 2035</td>
-            <td>
-              <div>
-                <h4>Establishment Name | Bachelor's Degree</h4>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                  reiciendis provident quisquam optio, facere impedit itaque
-                  ducimus quasi? Eius dolore consequatur quae perferendis dolor
-                  earum.
-                </p>
-              </div>
-            </td>
-          </tr>
+            </section>
+          </div>
+        </section>
 
-          <!-- Skills and Expertise Row -->
-          <tr>
-            <td>Skills & Expertise</td>
-            <td></td>
-            <td>
+        <!-- Education -->
+        <section class="resume-item">
+          <h2>Education</h2>
+          <div class="resume-details">
+            <!-- Education Item - 1 -->
+            <section class="resume-details-group">
+              <p class="year-column">2035 - 2035</p>
+              <div class="description-column">
+                <h3>Establishment Name | Master's Degree</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est
+                  debitis aliquid unde esse! Corporis, quaerat!
+                </p>
+              </div>
+            </section>
+            <!-- Education Item - 2 -->
+            <section class="resume-details-group">
+              <p class="year-column">2035 - 2035</p>
+              <div class="description-column">
+                <h3>Establishment Name | Bachelor's Degree</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
+                  autem aperiam eius necessitatibus cum vero! Tenetur debitis
+                  maxime inventore nulla!
+                </p>
+              </div>
+            </section>
+          </div>
+        </section>
+
+        <!-- Skills & Expertise -->
+        <section class="resume-item">
+          <h2>Skills<br />& Expertise</h2>
+          <!-- Skills Item - 1 -->
+          <section class="resume-details">
+            <div class="resume-details-group">
+              <p class="year-column"></p>
               <ul>
                 <li>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Accusamus molestias corrupti vitae asperiores cupiditate sit
-                  labore, velit ipsam?
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Consectetur, a?
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste
+                  sapiente dolores quis aspernatur commodi assumenda maiores
+                  labore, non magnam nihil!
                 </li>
                 <li>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Accusamus molestias corrupti vitae asperiores cupiditate sit
-                  labore, velit ipsam?
                 </li>
                 <li>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Accusamus molestias corrupti vitae asperiores cupiditate sit
-                  labore, velit ipsam?
-                </li>
-                <li>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Accusamus molestias corrupti vitae asperiores cupiditate sit
-                  labore, velit ipsam?
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Veniam, eius hic. Quas soluta nostrum corporis!
                 </li>
               </ul>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+            </div>
+          </section>
+        </section>
+      </div>
     </main>
 
     <!-- Bottom Section -->

@@ -6,6 +6,27 @@
     <title>My Portfolio | Contact</title>
     <link rel="stylesheet" href="../styles/global.css" />
     <link rel="stylesheet" href="../styles/contact.css" />
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const contactForm = document.getElementById("contact-form");
+        if (!contactForm) {
+          console.error("No form found");
+        } else {
+          contactForm.onsubmit = (e) => {
+            e.preventDefault();
+            const submitBtn = document.getElementById("submit-btn");
+            submitBtn.setAttribute("disabled", true);
+            setTimeout(() => {
+              window.alert(`Form with Id: ${e.target?.id} Submitted`);
+              submitBtn.removeAttribute("disabled");
+              window.location.search = "/src/contact.html";
+              window.location.reload();
+            }, 3000);
+          };
+        }
+      });
+    </script>
   </head>
   <body>
     <!-- Top Section-->
@@ -76,7 +97,7 @@
               </div>
               <div class="form-group">
                 <label for="phone">Phone</label>
-                <input type="number" name="" id="phone" required />
+                <input type="text" name="" id="phone" required />
               </div>
             </div>
             <!-- Message Group -->
@@ -84,7 +105,9 @@
               <label for="message">Message</label>
               <textarea name="message" id="message"></textarea>
             </div>
-            <button type="submit">Submit</button>
+            <button id="submit-btn" type="submit" class="text-md bg-yellow">
+              Submit
+            </button>
           </form>
         </div>
       </div>

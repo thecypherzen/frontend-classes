@@ -1,0 +1,53 @@
+main#main > div.content-wrapper {
+  gap: 100px;
+  max-width: 960px;
+}
+
+.resume-item {
+  display: flex;
+  justify-content: space-between;
+  h2 {
+    line-height: 1.725rem;
+    font-weight: 600;
+  }
+}
+
+.resume-details {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  h3 {
+    font-size: 1.125rem;
+  }
+}
+
+.description-column {
+  width: 75%;
+}
+
+.year-column {
+  width: 25%;
+}
+
+.resume-details-group {
+  display: flex;
+  gap: 10px;
+  ul {
+    width: 75%;
+    justify-self: flex-end;
+    padding-left: 1rem;
+    li {
+      list-style: disc;
+    }
+    li:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.description-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
