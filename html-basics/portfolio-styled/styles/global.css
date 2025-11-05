@@ -67,6 +67,7 @@ li {
   width: 100%;
   max-width: 1140px;
   margin: auto;
+  padding-inline: 1.5rem;
 }
 
 .p-xs {
@@ -270,4 +271,110 @@ footer#footer {
   border-style: solid;
   border-width: 1px 0px 0px 0px;
   border-color: var(--color-grey);
+}
+
+#mobile-nav-open-trigger {
+  display: none;
+}
+
+#mobile-nav {
+  background-color: rgba(33, 33, 33, 0.98);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  display: block;
+
+  #mobile-nav-close-btn {
+    color: white;
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 6px 12px;
+    border-radius: 5px;
+    transition: all ease-in-out 0.3s;
+    &:hover {
+      background: var(--color-grey-dark);
+    }
+  }
+}
+
+#mobile-nav-close-trigger {
+  outline: 2px solid red;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+#mobile-nav:has(#mobile-nav-close-trigger:checked) {
+  display: none;
+}
+
+/*header:has(#mobile-nav-open-trigger[display="block"]) #mobile-nav {
+}*/
+
+#mobile-nav > menu {
+  transition: all ease-in-out 0.5s;
+  color: white;
+  li {
+    padding-inline: 20px;
+    padding-block: 13px;
+    transition: all ease-in-out 0.3s;
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--color-grey-dark);
+    }
+  }
+  li:hover {
+    background: rgba(0, 0, 0, 0.8);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content-wrapper {
+    padding-inline: 1.5rem;
+  }
+
+  #index-main {
+    padding-block: var(--padding-2xl);
+  }
+
+  footer#footer {
+    .content-wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+      p {
+        align-items: center;
+        text-align: center;
+      }
+    }
+  }
+
+  #mobile-nav-open-trigger {
+    display: block;
+  }
+  /*#navigation-menu {
+		display: none;
+	}*/
+}
+
+@media screen and (max-width: 425px) {
+  section#left-section {
+    flex-direction: column;
+    border: 1px solid purple;
+    justify-content: start;
+    gap: 0px;
+  }
 }

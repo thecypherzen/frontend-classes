@@ -34,15 +34,26 @@
             <li><a href="src/contact.html">Contact</a></li>
           </menu>
         </nav>
+        <div id="mobile-nav-open-trigger">🍔</div>
       </div>
     </header>
-
+    <div id="mobile-nav">
+      <div id="mobile-nav-close-btn">
+        X
+        <input type="radio" id="mobile-nav-close-trigger" />
+      </div>
+      <menu class="flex items-center flex-col">
+        <li><a href="src/resume.html">Resume</a></li>
+        <li><a href="src/projects.html">Projects</a></li>
+        <li><a href="src/contact.html">Contact</a></li>
+      </menu>
+    </div>
     <!-- Middle Section -->
     <main id="index-main" class="py-3xl">
       <div class="content-wrapper flex gap-50 items-center">
         <section id="main-img"></section>
 
-        <section class="flex flex-col gap-50">
+        <section class="flex flex-col gap-50 index-main-body">
           <div id="main-text" class="flex flex-col gap-20">
             <h1 class="text-lg">Hello</h1>
             <h3>A bit about me</h3>

@@ -10,7 +10,7 @@
   background-image: url("../img/user-img.webp");
   background-size: cover;
   background-position: top center;
-  width: 100%;
+  width: 460%;
   height: 460px;
   border-radius: 50%;
   filter: grayscale(200);
@@ -60,4 +60,42 @@
 
 #main-links > li:hover {
   background-color: transparent;
+}
+
+@media screen and (max-width: 1024px) {
+  #index-main .content-wrapper {
+    flex-direction: column;
+    gap: 100px;
+    justify-content: center;
+  }
+  #main-img {
+    width: 320px;
+    height: 320px;
+  }
+
+  #main-text {
+    text-align: center;
+  }
+  .index-main-body {
+    padding-inline: 20px;
+    align-items: center;
+  }
+
+  #main-links {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 542px) {
+  #main-links {
+    li {
+      padding: 30px;
+      height: 110px;
+      width: 110px;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+      border-width: 1px;
+    }
+    gap: 10px;
+  }
 }
