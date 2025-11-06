@@ -145,6 +145,14 @@ li {
   align-items: start;
 }
 
+.display-block {
+  display: block !important;
+}
+
+.overflow-hidden {
+  overflow: hidden !important;
+}
+
 /* Colour utilities */
 .bg-grey-dark {
   background: var(--color-grey-dark);
@@ -275,13 +283,23 @@ footer#footer {
 
 #mobile-nav-open-trigger {
   display: none;
+  position: relative;
+}
+
+#mobile-nav-open-toggle {
+  outline: red;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
 }
 
 #mobile-nav {
   background-color: rgba(33, 33, 33, 0.98);
-  position: absolute;
-  top: 0px;
-  left: 0px;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   z-index: 100;
@@ -290,7 +308,7 @@ footer#footer {
   justify-content: center;
   align-items: center;
   padding: 40px;
-  display: block;
+  display: none;
 
   #mobile-nav-close-btn {
     color: white;
@@ -298,9 +316,14 @@ footer#footer {
     top: 16px;
     right: 20px;
     background: rgba(0, 0, 0, 0.8);
-    padding: 6px 12px;
+    padding: 6px 10px;
+    cursor: default;
     border-radius: 5px;
     transition: all ease-in-out 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     &:hover {
       background: var(--color-grey-dark);
     }
@@ -308,7 +331,6 @@ footer#footer {
 }
 
 #mobile-nav-close-trigger {
-  outline: 2px solid red;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -316,12 +338,10 @@ footer#footer {
   height: 100%;
 }
 
-#mobile-nav:has(#mobile-nav-close-trigger:checked) {
-  display: none;
+.material-icons {
+  padding-inline: 0px !important;
+  margin: 0px !important;
 }
-
-/*header:has(#mobile-nav-open-trigger[display="block"]) #mobile-nav {
-}*/
 
 #mobile-nav > menu {
   transition: all ease-in-out 0.5s;
@@ -364,16 +384,21 @@ footer#footer {
 
   #mobile-nav-open-trigger {
     display: block;
+    transition: all 0.3s ease-in;
+    cursor: default;
+    &:hover {
+      color: var(--color-grey);
+    }
   }
-  /*#navigation-menu {
-		display: none;
-	}*/
+
+  #navigation-menu {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 425px) {
   section#left-section {
     flex-direction: column;
-    border: 1px solid purple;
     justify-content: start;
     gap: 0px;
   }

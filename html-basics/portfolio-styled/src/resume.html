@@ -6,6 +6,39 @@
     <title>My Portfolio | Resume</title>
     <link rel="stylesheet" href="../styles/global.css" />
     <link rel="stylesheet" href="../styles/resume.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Open Mobile Nav
+        const mobileMenuTrigger = document.getElementById(
+          "mobile-nav-open-trigger"
+        );
+        const mobileMenu = document.getElementById("mobile-nav");
+        if (mobileMenuTrigger && mobileMenu) {
+          mobileMenuTrigger.addEventListener("click", () => {
+            if (mobileMenu) {
+              mobileMenu.classList.add("display-block");
+              document.querySelector("body").classList.add("overflow-hidden");
+            } else {
+              console.log("mobileMenu not found");
+            }
+          });
+        }
+
+        const mobileNavCloseBtn = document.getElementById(
+          "mobile-nav-close-btn"
+        );
+        if (mobileNavCloseBtn && mobileMenu) {
+          mobileNavCloseBtn.addEventListener("click", () => {
+            mobileMenu.classList.remove("display-block");
+            document.querySelector("body").classList.remove("overflow-hidden");
+          });
+        }
+      });
+    </script>
   </head>
   <body>
     <!-- Top Section-->
@@ -34,8 +67,23 @@
             <li><a href="../src/contact.html">Contact</a></li>
           </menu>
         </nav>
+        <div id="mobile-nav-open-trigger">
+          <i class="material-icons"> menu </i>
+        </div>
       </div>
     </header>
+
+    <!-- Mobile Navigation -->
+    <div id="mobile-nav">
+      <div id="mobile-nav-close-btn">
+        <i class="material-icons"> close </i>
+      </div>
+      <menu class="flex items-center flex-col">
+        <li><a href="../src/resume.html">Resume</a></li>
+        <li><a href="../src/projects.html">Projects</a></li>
+        <li><a href="../src/contact.html">Contact</a></li>
+      </menu>
+    </div>
 
     <!-- Main Section -->
     <main id="main">
