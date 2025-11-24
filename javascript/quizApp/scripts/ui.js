@@ -32,9 +32,16 @@ export function renderCurrentQuestion(question, totalQuestions) {
       nextBtn.disabled = false;
     }
   }
+  if (question.optionsElements) {
+    uiQuestionOptions.innerHTML = "";
+    question.optionsElements.forEach((element) => {
+      uiQuestionOptions.appendChild(element);
+    });
+    return;
+  }
 
   // construct options
-  question.options.forEach((value) => {
+  const renderedOptions = question.options.map((value) => {
     const clone = QuestionOptionTemplate.content.cloneNode(true);
     const option = clone.querySelector("button");
     option.setAttribute("data-key", `option-${value}`);
@@ -44,7 +51,10 @@ export function renderCurrentQuestion(question, totalQuestions) {
       updateSelectedOption(option);
     });
     uiQuestionOptions.appendChild(option);
+    return option;
   });
+  question.optionsElements = renderedOptions;
+  console.log("question after:", question);
 }
 
 // Update selected option in UI
