@@ -6,6 +6,8 @@ const previousBtn = document.getElementById("previous-btn");
 const nextBtn = document.getElementById("next-btn");
 QuestionOptionTemplate.innerHTML = ` <button class="question-option"></button> `;
 
+export let quizIsSubmitted = false;
+
 export function renderCurrentQuestion(question, totalQuestions) {
   if (!question) {
     return;
@@ -24,7 +26,6 @@ export function renderCurrentQuestion(question, totalQuestions) {
   }
 
   if (question.number === totalQuestions) {
-    nextBtn.innerText = "Quiz Completed";
     nextBtn.disabled = true;
   } else {
     if (nextBtn && nextBtn.disabled && question.number < totalQuestions) {
@@ -48,17 +49,19 @@ export function renderCurrentQuestion(question, totalQuestions) {
     option.innerText = value;
     // handle option selection
     option.addEventListener("click", () => {
-      updateSelectedOption(option);
+      updateSelectedOption(option, question);
     });
     uiQuestionOptions.appendChild(option);
     return option;
   });
   question.optionsElements = renderedOptions;
-  console.log("question after:", question);
 }
 
 // Update selected option in UI
-function updateSelectedOption(selectedOption) {
+function updateSelectedOption(selectedOption, question) {
+  if (quizIsSubmitted) {
+    return;
+  }
   const allOptions = Array.from(
     document.querySelectorAll(".question-option") || []
   );
@@ -69,4 +72,32 @@ function updateSelectedOption(selectedOption) {
       option.setAttribute("data-selected", "false");
     }
   });
+  question.isAnswered = true;
+}
+
+export function setQuizIsSubmitted(value) {
+  quizIsSubmitted = value;
+}
+
+export function getQuizIsSubmitted() {
+  return quizIsSubmitted;
+}
+
+export function showQuizResult({ scores, totalPossible, passMark }) {
+  const uiResultScore = document.getElementById("result-score");
+  const uiResultRemark = document.getElementById("result-remark");
+  const resultSection = document.getElementById("result");
+
+  if (!uiResultRemark || !uiResultScore || !resultSection) {
+    return;
+  }
+  const percentage = Math.round((scores / totalPossible) * 1000) / 10;
+  const remark = percentage >= passMark ? "Pass" : "Fail";
+  uiResultScore.innerText = percentage;
+  uiResultRemark.innerText = remark;
+  resultSection.dataset.remark = remark.toLowerCase();
+  if (resultSection.classList.contains("hidden")) {
+    resultSection.classList.remove("hidden");
+    resultSection.classList.add("flex");
+  }
 }

@@ -13,6 +13,13 @@
         <h1>Quizard</h1>
         <p>Test Your Brain Nerves</p>
       </header>
+      <section id="result" class="hidden">
+        <p id="score-wrapper">
+          <span id="result-score"></span>
+          <span id="percent-sign">%</span>
+        </p>
+        <p id="result-remark"></p>
+      </section>
       <!-- Questions Section -->
       <section id="question-section">
         <div id="question-header">
@@ -28,16 +35,19 @@
             <button>Option 4</button>
           </div>
         </article>
-        <aside>
+        <aside class="hidden">
           <p>See Result <span>+</span></p>
         </aside>
       </section>
 
       <!-- Navigation Section -->
-      <nav>
-        <button id="previous-btn">Previous</button>
-        <button id="next-btn">Next</button>
-      </nav>
+      <footer>
+        <nav>
+          <button id="previous-btn">Previous</button>
+          <button id="next-btn">Next</button>
+        </nav>
+        <button id="submit-btn">Submit</button>
+      </footer>
     </main>
     <script type="module" src="scripts/app.js"></script>
   </body>
