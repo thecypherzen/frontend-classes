@@ -27,7 +27,7 @@
           <button>Quit</button>
         </div>
         <article>
-          <h2 id="question">What is your name?</h2>
+          <h2 class="question">What is your name?</h2>
           <div id="question-options">
             <button>Option 1</button>
             <button>Option 2</button>
@@ -35,8 +35,12 @@
             <button>Option 4</button>
           </div>
         </article>
-        <aside class="hidden">
-          <p>See Result <span>+</span></p>
+        <aside id="explanation" class="hidden">
+          <div id="explanation-heading">
+            <span>Explanation</span>
+            <span id="explanation-toggle">show</span>
+          </div>
+          <p id="explanation-content" class="hidden"></p>
         </aside>
       </section>
 

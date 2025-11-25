@@ -1,4 +1,4 @@
-const uiQuestionContainer = document.getElementById("question");
+const uiQuestionContainer = document.querySelector(".question");
 const uiQuestionOptions = document.getElementById("question-options");
 const QuestionOptionTemplate = document.createElement("template");
 const questionSummaryContainer = document.getElementById("question-summary");
@@ -15,6 +15,7 @@ export function renderCurrentQuestion(question, totalQuestions) {
   // set summary, question text and clear previous options
   questionSummaryContainer.innerText = `${question.number}/${totalQuestions}`;
   uiQuestionContainer.innerText = question.question;
+  uiQuestionContainer.setAttribute("id", `${question.id}`);
   uiQuestionOptions.innerHTML = "";
 
   // update next and previous button states
@@ -38,6 +39,9 @@ export function renderCurrentQuestion(question, totalQuestions) {
     question.optionsElements.forEach((element) => {
       uiQuestionOptions.appendChild(element);
     });
+    if (getQuizIsSubmitted()) {
+      updateQuestionExplanation(question);
+    }
     return;
   }
 
@@ -57,6 +61,7 @@ export function renderCurrentQuestion(question, totalQuestions) {
   question.optionsElements = renderedOptions;
   if (getQuizIsSubmitted()) {
     markSingleQuestion(question);
+    updateQuestionExplanation(question);
   }
 }
 
@@ -86,10 +91,17 @@ export function getQuizIsSubmitted() {
   return quizIsSubmitted;
 }
 
-export function showQuizResult({ scores, totalPossible, passMark }) {
+export function showQuizResult(
+  { scores, totalPossible, passMark },
+  currentQuestionId,
+  quizQuestions
+) {
   const uiResultScore = document.getElementById("result-score");
   const uiResultRemark = document.getElementById("result-remark");
   const resultSection = document.getElementById("result");
+
+  const explanation = document.getElementById("explanation");
+  const explanationToggle = document.getElementById("explanation-toggle");
 
   if (!uiResultRemark || !uiResultScore || !resultSection) {
     return;
@@ -103,6 +115,28 @@ export function showQuizResult({ scores, totalPossible, passMark }) {
     resultSection.classList.remove("hidden");
     resultSection.classList.add("flex");
   }
+
+  if (!explanation || !explanationToggle) return;
+
+  explanation.classList.remove("hidden");
+  explanation.classList.add("block");
+
+  // add event listener to toggle
+  explanationToggle.addEventListener("click", () => {
+    const explanationContent = document.getElementById("explanation-content");
+    if (!explanationContent) return;
+    toggleClassesOn(explanationContent, "hidden", "block");
+  });
+
+  const currentQuestion = quizQuestions.get(currentQuestionId);
+  if (!currentQuestion) return;
+  updateQuestionExplanation(currentQuestion);
+}
+
+function updateQuestionExplanation(question) {
+  const explanationContent = document.getElementById("explanation-content");
+  if (!explanationContent) return;
+  explanationContent.innerText = question.explanation;
 }
 
 /**
@@ -110,9 +144,7 @@ export function showQuizResult({ scores, totalPossible, passMark }) {
  *
  */
 export function markQuizSubmission(quizQuestions) {
-  console.log("marking quiz");
   const allQuestions = quizQuestions.all();
-  console.log(allQuestions[0]);
   let scores = 0,
     totalPossible = 0;
   allQuestions.forEach((question) => {
@@ -141,4 +173,15 @@ function markSingleQuestion(question) {
     });
   }
   return score;
+}
+
+function toggleClassesOn(el, classone, classtwo) {
+  if (!el) return;
+  if (el.classList.contains(classone)) {
+    el.classList.remove(classone);
+    el.classList.add(classtwo);
+  } else {
+    el.classList.remove(classtwo);
+    el.classList.add(classone);
+  }
 }

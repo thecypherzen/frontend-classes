@@ -525,4 +525,9 @@ export const quizQuestions = {
       quizQuestions.currentIndex = quizQuestions.currentIndex + 1;
     }
   },
+  get: (id) => {
+    const questions = quizQuestions.all();
+    const question = questions.find((q) => q.id == id);
+    return question;
+  },
 };

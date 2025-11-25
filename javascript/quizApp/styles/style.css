@@ -227,18 +227,16 @@ header {
   }
   aside {
     margin-top: 20px;
-    color: var(--secondary-color);
-    font-size: 0.75rem;
-    p {
-      font-weight: 300;
-      span {
-        padding: 5px;
-        font-weight: 500;
-        cursor: default;
-        &:hover {
-          color: var(--color-red);
-        }
-      }
+    color: var(--color-neutral);
+    font-size: 0.825rem;
+    font-weight: 200;
+    #explanation-toggle {
+      font-weight: 500;
+      margin-left: 10px;
+      cursor: default;
+    }
+    #explanation-content {
+      margin-top: 5px;
     }
   }
 }

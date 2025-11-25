@@ -30,6 +30,7 @@ submitBtn.addEventListener("click", (event) => {
 });
 
 function handleQuizSubmit(quizQuestions) {
+  const currentQuestion = document.querySelector(".question");
   const totalQuestionsCount = quizQuestions.count;
   const answeredCount = quizQuestions
     .all()
@@ -46,7 +47,7 @@ function handleQuizSubmit(quizQuestions) {
   result.passMark = PASS_MARK;
   setQuizIsSubmitted(true);
   submitBtn.disabled = true;
-  showQuizResult(result);
+  showQuizResult(result, currentQuestion.id ?? 1, quizQuestions);
 }
 
 renderCurrentQuestion(quizQuestions.current(), quizQuestions.count);
