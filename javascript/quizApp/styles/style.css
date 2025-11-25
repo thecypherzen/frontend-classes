@@ -175,7 +175,6 @@ header {
       margin-top: 16px;
     }
     div {
-      /*border: 1px solid red;*/
       display: flex;
       flex-direction: column;
       align-items: start;
@@ -194,6 +193,34 @@ header {
         &:hover {
           background-color: var(--secondary-color);
           color: #fff;
+        }
+        &[data-iscorrect="false"] {
+          background-color: var(--color-red-light);
+          color: var(--color-red-dark);
+          &:hover {
+            background-color: var(--color-red-light);
+          }
+        }
+        &[data-isanswer="true"] {
+          background-color: var(--color-green-light);
+          color: var(--color-green-dark);
+          &:hover {
+            background-color: var(--color-green-light);
+          }
+        }
+        &[data-iscorrect="true"][data-isanswer="true"] {
+          background-color: var(--color-green-dark);
+          color: #fff;
+          &:hover {
+            background-color: var(--color-green-dark);
+          }
+        }
+        &[data-iscorrect="false"][data-selected="true"] {
+          background-color: var(--color-red-dark);
+          color: #fff;
+          &:hover {
+            background-color: var(--color-red-dark);
+          }
         }
       }
     }

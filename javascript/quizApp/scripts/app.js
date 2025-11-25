@@ -3,6 +3,7 @@ import {
   setQuizIsSubmitted,
   renderCurrentQuestion,
   showQuizResult,
+  markQuizSubmission,
 } from "./ui.js";
 
 const previousBtn = document.getElementById("previous-btn");
@@ -42,42 +43,10 @@ function handleQuizSubmit(quizQuestions) {
   if (!submitConfimed) return;
 
   const result = markQuizSubmission(quizQuestions);
+  result.passMark = PASS_MARK;
   setQuizIsSubmitted(true);
   submitBtn.disabled = true;
   showQuizResult(result);
-}
-
-/**
- * markQuizSubmission
- *
- */
-function markQuizSubmission(quizQuestions) {
-  console.log("marking quiz");
-  const allQuestions = quizQuestions.all();
-  console.log(allQuestions[0]);
-  let scores = 0,
-    totalPossible = 0;
-  allQuestions.forEach((question) => {
-    totalPossible += question.marks;
-    scores += markSingleQuestion(question);
-  });
-  return { scores, totalPossible, passMark: PASS_MARK }; // { scores: scores, totalPossible: totalPossible}
-}
-
-function markSingleQuestion(question) {
-  let score = 0;
-  if (question.optionsElements) {
-    const correctOption = question.optionsElements.filter((el) => {
-      const value = el.dataset.key.replace("option-", "");
-      return value === question.answer;
-    });
-    question.optionsElements.forEach((el) => {
-      if (el.dataset.selected === "true" && el === correctOption[0]) {
-        score = question.marks;
-      }
-    });
-  }
-  return score;
 }
 
 renderCurrentQuestion(quizQuestions.current(), quizQuestions.count);

@@ -55,6 +55,9 @@ export function renderCurrentQuestion(question, totalQuestions) {
     return option;
   });
   question.optionsElements = renderedOptions;
+  if (getQuizIsSubmitted()) {
+    markSingleQuestion(question);
+  }
 }
 
 // Update selected option in UI
@@ -100,4 +103,42 @@ export function showQuizResult({ scores, totalPossible, passMark }) {
     resultSection.classList.remove("hidden");
     resultSection.classList.add("flex");
   }
+}
+
+/**
+ * markQuizSubmission
+ *
+ */
+export function markQuizSubmission(quizQuestions) {
+  console.log("marking quiz");
+  const allQuestions = quizQuestions.all();
+  console.log(allQuestions[0]);
+  let scores = 0,
+    totalPossible = 0;
+  allQuestions.forEach((question) => {
+    totalPossible += question.marks;
+    scores += markSingleQuestion(question);
+  });
+  return { scores, totalPossible }; // { scores: scores, totalPossible: totalPossible}
+}
+
+function markSingleQuestion(question) {
+  let score = 0;
+  if (question.optionsElements) {
+    const correctOption = question.optionsElements.filter((el) => {
+      const value = el.dataset.key.replace("option-", "");
+      return value === question.answer;
+    });
+    if (correctOption[0]) correctOption[0].dataset.isanswer = "true";
+
+    question.optionsElements.forEach((el) => {
+      if (el.dataset.selected === "true" && el === correctOption[0]) {
+        el.dataset.iscorrect = "true";
+        score = question.marks;
+      } else {
+        el.dataset.iscorrect = "false";
+      }
+    });
+  }
+  return score;
 }
