@@ -1,0 +1,20 @@
+[
+	{
+		"name": "Sediq",
+		"age": 17,
+		"state": "Kogi",
+		"height": 0.8
+	},
+	{
+		"name": "Person 2",
+		"age": 27,
+		"state": "Kano",
+		"height": 1.2
+	},
+	{
+		"name": "Kelvin",
+		"age": 18,
+		"state": "Abuja",
+		"height": 1.3
+	}
+]
