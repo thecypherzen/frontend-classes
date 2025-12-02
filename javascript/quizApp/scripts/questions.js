@@ -502,7 +502,6 @@ const questionsData = [
 ];
 
 export const quizQuestions = {
-	data: () =>
   count: questionsData.length,
   currentIndex: 0,
   all: () => questionsData,
