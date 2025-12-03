@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classes in JS</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>JS Classes</h1>
+    <form id="product-form">
+      <!-- title -->
+      <div class="form-group">
+        <label for="product-title">Product Title</label>
+        <input type="text" id="product-title" name="title" />
+      </div>
+      <!-- price -->
+      <div class="form-group">
+        <label for="product-price">Price</label>
+        <input name="price" type="text" id="product-price" />
+      </div>
+      <!-- description -->
+      <div class="form-group">
+        <label for="product-description">Description</label>
+        <textarea name="description" id="product-description"></textarea>
+      </div>
+      <!-- category -->
+      <div class="form-group">
+        <label for="product-cat">Category</label>
+        <input name="category" type="text" id="product-cat" />
+      </div>
+      <div>
+        <button type="submit">Create Product</button>
+      </div>
+    </form>
+    <div id="result-area"></div>
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
